@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Use Node.js version 16 (or adjust based on your project)
+        node-version: '20'  # Use Node.js version 16 (or adjust based on your project)
 
     - name: Install Dependencies
       run: npm install
@@ -29,6 +29,6 @@ jobs:
     - name: Publish to Azure
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'YOUR_AZURE_APP_NAME'  # Replace with your Azure App Service name
+        app-name: 'Frontend-Bdashboard'  # Replace with your Azure App Service name
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}  # Azure publish profile from secrets
         package: './build'  # Path to the build folder after running npm run build
